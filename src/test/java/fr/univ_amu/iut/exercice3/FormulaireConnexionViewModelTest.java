@@ -25,7 +25,7 @@ class FormulaireConnexionViewModelTest {
         .isFalse();
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_formulaire_devient_validable_quand_les_deux_champs_sont_remplis() {
     FormulaireConnexionViewModel vm =
@@ -40,7 +40,7 @@ class FormulaireConnexionViewModelTest {
         .isTrue();
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void une_connexion_reussie_affiche_un_message_de_bienvenue() {
     FormulaireConnexionViewModel vm =
