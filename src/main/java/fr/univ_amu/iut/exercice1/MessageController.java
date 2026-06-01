@@ -1,5 +1,6 @@
 package fr.univ_amu.iut.exercice1;
 
+import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -28,13 +29,9 @@ public class MessageController {
 
   @FXML
   private void initialize() {
-    // TODO exercice 1 : brancher la vue sur le ViewModel.
-    //
-    // - Liaison BIDIRECTIONNELLE entre le champ de saisie et texteProperty()
-    //   (ce que tape l'utilisateur va dans le ViewModel, et inversement) :
-    //     champTexte.textProperty().bindBidirectional(viewModel.texteProperty());
-    // - Liaison SIMPLE (sens unique) de l'apercu : il se contente d'afficher
-    //   ce que le ViewModel calcule :
-    //     labelApercu.textProperty().bind(viewModel.apercuProperty());
+    // Liaison minimale : bidirectionnelle pour le champ et unidirectionnelle pour
+    // l'aperçu
+    champTexte.textProperty().bindBidirectional(viewModel.texteProperty());
+    labelApercu.textProperty().bind(Bindings.concat("Aperçu : ", viewModel.texteProperty()));
   }
 }
