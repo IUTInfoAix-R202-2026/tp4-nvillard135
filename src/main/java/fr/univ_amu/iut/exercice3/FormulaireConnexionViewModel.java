@@ -64,5 +64,13 @@ public class FormulaireConnexionViewModel {
     // 3. Selon le résultat, publier un message clair dans statut :
     // - succès : "Bienvenue " + identifiant + " !"
     // - échec : "Identifiants incorrects. Vérifiez votre saisie."
+
+    statut.set("Connexion en cours");
+    boolean authok = serviceAuth.connecter(identifiant.get(), motDePasse.get());
+    if (authok) {
+      statut.set("Bienvenue " + identifiant.get() + " !");
+    } else {
+      statut.set("Identifiants incorrects. Vérifiez votre saisie.");
+    }
   }
 }
